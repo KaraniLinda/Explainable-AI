@@ -94,17 +94,16 @@ explain_rf <- explain(
 ```{r}
 #Output
 
-library(modelDown)
-library(archivist)
+require("ranger")
+require("breakDown")
+require("DALEX")
 
 modelDown::modelDown(
     explain_rf,
-    modulesb= c("auditor","drifter","model_performance","variable_importance", "variable_response"),
-    output_folder = tempdir(), 
+    modules = c("model_performance","variable_importance", "variable_response"),
+    output_folder = "Output", 
     repository_name = "app", 
-    remote_repository_path = "C:/Users/karanil/Documents/gitrepo/Explainable AI",
-    device = "png",
-    should_open_website = interactive())
+    remote_repository_path = "C:/Users/karanil/Documents/gitrepo/Explainable AI")
 
 ```
 
